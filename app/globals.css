@@ -32,3 +32,9 @@
 .audience-card p{font-size:14px;line-height:1.55;color:#59625c}
 @media(max-width:900px){.audience-grid{grid-template-columns:repeat(2,1fr)}.audience-card{min-height:210px}}
 @media(max-width:600px){#para-quem{padding:56px 0}.audience-head{margin-bottom:28px}.audience-head h2{font-size:38px;letter-spacing:-1.5px}.audience-grid{grid-template-columns:1fr}.audience-card{min-height:0;padding:20px}}
+
+/* Streamlined hero */
+.nav{justify-content:flex-start}
+.hero-grid{min-height:calc(100svh - 84px);padding-bottom:48px}
+.hero h1 span{font-size:1.12em;line-height:.9;text-shadow:0 0 36px #13d66f55}
+@media(max-width:600px){.hero-grid{min-height:auto;padding-top:28px;padding-bottom:48px}.hero h1 span{font-size:1.28em;margin-bottom:8px}}

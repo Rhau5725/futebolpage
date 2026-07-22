@@ -9,12 +9,6 @@ const audiences = [
   ["Quem busca treinos melhores", "Para criar sessões mais dinâmicas e produtivas sem perder horas planejando novas atividades."],
 ];
 
-const modules = [
-  ["01", "+250 Dinâmicas", "Atividades prontas para diferentes objetivos, organizadas de forma prática e fácil de aplicar."],
-  ["02", "Biblioteca por Objetivo", "Escolha a habilidade que deseja desenvolver e monte treinos completos em poucos minutos."],
-  ["03", "Desafios Semanais", "Desafios práticos para aumentar o engajamento e acompanhar a evolução técnica dos atletas."],
-];
-
 const bonuses = [
   ["Aquecimentos Prontos", "Exercícios rápidos para começar com organização, intensidade e preparação física.", "/images/bonus-1-aquecimentos.png", "R$27,00"],
   ["Certificados de Craque", "Modelos para reconhecer a dedicação, evolução e participação dos atletas.", "/images/bonus-2-certificados.png", "R$17,00"],
@@ -51,11 +45,9 @@ export default function Home() {
         <div className="pitch-lines" />
         <nav className="nav wrap" aria-label="Navegação principal">
           <a className="brand" href="#inicio"><span>⚽</span> TREINO<span>PRO</span></a>
-          <a className="nav-cta" href="#oferta">Ver oferta</a>
         </nav>
         <div className="hero-grid wrap">
           <div className="hero-copy">
-            <div className="eyebrow"><i /> Método prático para treinos melhores</div>
             <h1><span>+250</span> Dinâmicas de Futebol Prontas</h1>
             <p>Tenha atividades organizadas para tornar seus treinos mais divertidos, eficientes e profissionais. Economize tempo no planejamento e mantenha seus atletas sempre motivados.</p>
             <a className="button primary" href="#oferta">Quero melhorar meus treinos agora <b>→</b></a>
@@ -66,23 +58,12 @@ export default function Home() {
             <div className="floating-stat"><strong>250+</strong><span>atividades prontas</span></div>
           </div>
         </div>
-        <div className="hero-bar"><div className="wrap"><span>⚡ Menos tempo planejando</span><span>⚽ Mais variedade no campo</span><span>🏆 Atletas mais motivados</span></div></div>
       </section>
 
       <section className="section light" id="para-quem">
         <div className="wrap">
           <div className="section-head audience-head"><h2>Para quem é esse material?</h2></div>
           <div className="audience-grid">{audiences.map(([title,text]) => <article className="audience-card" key={title}><span className="icon-box">✓</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
-        </div>
-      </section>
-
-      <section className="section dark" id="conteudo">
-        <div className="wrap">
-          <div className="section-head left"><span className="kicker gold">CONTEÚDO COMPLETO, APLICAÇÃO SIMPLES</span><h2>O que você vai receber</h2><p>Uma central de ideias para planejar, aplicar e evoluir cada sessão.</p></div>
-          <div className="module-layout">
-            <div className="module-list">{modules.map(([n,title,text]) => <article className="module-card" key={n}><span>{n}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
-            <div className="vip-panel"><small>ACESSO EXCLUSIVO</small><h3>Área VIP</h3><p>Todo o seu repertório organizado em um só lugar, disponível sempre que o próximo treino pedir uma ideia nova.</p><div className="mini-ui"><div className="mini-top"><b>Seu próximo treino</b><em>12 atividades</em></div><div className="field"><i /><i /><i /><i /><span /></div><div className="progress"><span /></div></div></div>
-          </div>
         </div>
       </section>
 
