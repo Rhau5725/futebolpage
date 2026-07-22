@@ -102,3 +102,11 @@
 
 .hero-grid{min-height:100svh;padding-top:34px}
 @media(max-width:600px){.hero-grid{padding-top:28px}}
+
+.plan-trust-banner{margin:4px 0 18px;border:1px solid #22d678;border-radius:12px;overflow:hidden;background:#03140d}
+.plan-trust-banner img{display:block;width:100%;height:auto}
+.modal h2{font-size:46px;font-weight:950;line-height:.94;letter-spacing:-1.4px;margin-bottom:16px}
+.modal>p{font-size:15px;line-height:1.45;font-weight:800;color:#3e4b44}
+.modal-items span{font-size:14px;font-weight:850}
+.modal-price{font-weight:950}
+@media(max-width:600px){.modal h2{font-size:37px;line-height:.98}.modal>p{font-size:14px}.modal-items span{font-size:13px}}
