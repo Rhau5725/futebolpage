@@ -99,3 +99,6 @@
 .bonus-price strong{font-size:18px}
 @media(max-width:900px){.bonus-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.bonuses{padding:38px 0 42px}.bonuses .section-head{margin-bottom:16px}.bonuses .section-head h2{font-size:31px}.bonuses .section-head p{font-size:13px}.bonus-grid{grid-template-columns:repeat(2,1fr);gap:8px}.bonus-card{border-radius:11px}.bonus-body{padding:9px 10px 11px}.bonus-body .bonus-number{font-size:8px;margin-bottom:5px}.bonus-body h3{font-size:13px;line-height:1.15}.bonus-body p{display:none}.bonus-price{margin-top:8px;padding-top:7px;align-items:center}.bonus-price span{font-size:9px}.bonus-price strong{font-size:14px}}
+
+.hero-grid{min-height:100svh;padding-top:34px}
+@media(max-width:600px){.hero-grid{padding-top:28px}}

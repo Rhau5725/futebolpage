@@ -17,7 +17,7 @@ const bonuses = [
 ];
 
 const completeItems = [
-  "+250 Dinâmicas de Futebol", "Área VIP completa", "Biblioteca de Treinos por Objetivo",
+  "+250 Dinâmicas de Futebol", "Biblioteca de Treinos por Objetivo",
   "Desafios Semanais", "Todos os bônus inclusos",
 ];
 
@@ -42,13 +42,10 @@ export default function Home() {
     <main>
       <section className="hero" id="inicio">
         <div className="pitch-lines" />
-        <nav className="nav wrap" aria-label="Navegação principal">
-          <a className="brand" href="#inicio"><span>⚽</span> TREINO<span>PRO</span></a>
-        </nav>
         <div className="hero-grid wrap">
           <div className="hero-copy">
             <h1><span>+250</span> Dinâmicas de Futebol Prontas</h1>
-            <p>Tenha atividades organizadas para tornar seus treinos mais divertidos, eficientes e profissionais. Economize tempo no planejamento e mantenha seus atletas sempre motivados.</p>
+            <p>Treinos prontos, organizados e mais motivadores para seus atletas.</p>
             <div className="hero-visual">
               <div className="image-shell"><img src="/images/football-training-kit.png" alt="Mockup do material com dinâmicas e planos de treino de futebol" /></div>
             </div>
