@@ -102,10 +102,3 @@
 
 .hero-grid{min-height:100svh;padding-top:34px}
 @media(max-width:600px){.hero-grid{padding-top:28px}}
-
-.complete-highlights{display:grid;gap:8px;margin:0 0 14px}
-.complete-highlights div{display:flex;align-items:center;gap:9px;padding:11px 12px;border:1px solid #55c51f;background:#123a20;border-radius:10px;color:#fff;font-size:13px;font-weight:800}
-.complete-highlights b{color:#65df2b;font-size:16px}
-.complete-highlights span{color:#fff}
-.modal-featured{background:#e8f6df;border:1px solid #87c96a;border-radius:12px;padding:12px;margin-bottom:8px}
-.modal-featured span{color:#155d2d;font-weight:900}
