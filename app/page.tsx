@@ -18,8 +18,7 @@ const bonuses = [
 
 const completeItems = [
   "+250 Dinâmicas de Futebol", "Área VIP completa", "Biblioteca de Treinos por Objetivo",
-  "Desafios Semanais", "Aquecimentos Prontos", "Certificados de Craque",
-  "Organização de Treinos", "Exercícios de Agilidade e Velocidade", "Todos os bônus inclusos",
+  "Desafios Semanais", "Todos os bônus inclusos",
 ];
 
 const faqs = [
