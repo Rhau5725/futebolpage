@@ -3,12 +3,10 @@
 import { useEffect, useState } from "react";
 
 const audiences = [
-  ["⚽", "Professores de futebol", "Mais repertório para aulas que prendem a atenção."],
-  ["🏟️", "Treinadores de escolinhas", "Sessões organizadas, mesmo com pouco tempo."],
-  ["🤝", "Projetos sociais", "Atividades inclusivas, práticas e fáceis de adaptar."],
-  ["🏆", "Categorias de base", "Treinos que desenvolvem técnica e motivação."],
-  ["🎯", "Quem busca engajamento", "Atletas presentes e envolvidos do início ao fim."],
-  ["📋", "Quem quer organização", "Planeje melhor sem perder horas montando exercícios."],
+  ["Professores e treinadores", "Para quem quer renovar as aulas, organizar melhor cada sessão e aplicar atividades com segurança."],
+  ["Escolinhas e projetos sociais", "Para quem trabalha com grupos diferentes e precisa de dinâmicas práticas, inclusivas e fáceis de adaptar."],
+  ["Quem quer mais engajamento", "Para prender a atenção dos atletas, aumentar a participação e manter a motivação do início ao fim."],
+  ["Quem busca treinos melhores", "Para criar sessões mais dinâmicas e produtivas sem perder horas planejando novas atividades."],
 ];
 
 const modules = [
@@ -73,8 +71,8 @@ export default function Home() {
 
       <section className="section light" id="para-quem">
         <div className="wrap">
-          <div className="section-head"><span className="kicker">FEITO PARA QUEM VIVE O FUTEBOL</span><h2>Para quem é esse material?</h2><p>Para profissionais que querem sair do improviso e entregar treinos que os atletas esperam a semana inteira.</p></div>
-          <div className="audience-grid">{audiences.map(([icon,title,text]) => <article className="audience-card" key={title}><span className="icon-box">{icon}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+          <div className="section-head audience-head"><h2>Para quem é esse material?</h2></div>
+          <div className="audience-grid">{audiences.map(([title,text]) => <article className="audience-card" key={title}><span className="icon-box">✓</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
         </div>
       </section>
 
