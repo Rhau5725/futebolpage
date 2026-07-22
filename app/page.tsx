@@ -18,10 +18,10 @@ const modules = [
 ];
 
 const bonuses = [
-  ["Aquecimentos Prontos", "Exercícios rápidos para começar com organização, intensidade e preparação física."],
-  ["Certificados de Craque", "Modelos para reconhecer a dedicação, evolução e participação dos atletas."],
-  ["Organização de Treinos", "Estruture sessões eficientes e mantenha a equipe motivada do início ao fim."],
-  ["Agilidade e Velocidade", "Desenvolva explosão, coordenação e mudança de direção com exercícios completos."],
+  ["Aquecimentos Prontos", "Exercícios rápidos para começar com organização, intensidade e preparação física.", "/images/bonus-1-aquecimentos.png", "R$27,00"],
+  ["Certificados de Craque", "Modelos para reconhecer a dedicação, evolução e participação dos atletas.", "/images/bonus-2-certificados.png", "R$17,00"],
+  ["Organização de Treinos", "Estruture sessões eficientes e mantenha a equipe motivada do início ao fim.", "/images/bonus-3-organizacao.png", "R$23,00"],
+  ["Agilidade e Velocidade", "Desenvolva explosão, coordenação e mudança de direção com exercícios completos.", "/images/bonus-4-agilidade.png", "R$20,00"],
 ];
 
 const completeItems = [
@@ -99,7 +99,7 @@ export default function Home() {
       <section className="section bonuses" id="bonus">
         <div className="wrap">
           <div className="section-head"><span className="kicker gold">MAIS VALOR PARA O SEU TREINO</span><h2>Bônus Especiais Inclusos</h2><p>Quatro materiais extras para deixar sua preparação ainda mais completa.</p></div>
-          <div className="bonus-grid">{bonuses.map(([title,text], i) => <article className="bonus-card" key={title}><div className="bonus-number">BÔNUS {i + 1}</div><span className="gift">🎁</span><h3>{title}</h3><p>{text}</p><div className="bonus-price"><span>De <s>R$17,00</s></span><strong>GRÁTIS</strong></div></article>)}</div>
+          <div className="bonus-grid">{bonuses.map(([title,text,image,price], i) => <article className="bonus-card" key={title}><div className="bonus-image"><img src={image} alt={`Bônus ${i + 1}: ${title}`} /></div><div className="bonus-body"><div className="bonus-number">BÔNUS {i + 1}</div><h3>{title}</h3><p>{text}</p><div className="bonus-price"><span>De <s>{price}</s></span><strong>GRÁTIS</strong></div></div></article>)}</div>
         </div>
       </section>
 
