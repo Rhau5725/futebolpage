@@ -1,0 +1,125 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const audiences = [
+  ["⚽", "Professores de futebol", "Mais repertório para aulas que prendem a atenção."],
+  ["🏟️", "Treinadores de escolinhas", "Sessões organizadas, mesmo com pouco tempo."],
+  ["🤝", "Projetos sociais", "Atividades inclusivas, práticas e fáceis de adaptar."],
+  ["🏆", "Categorias de base", "Treinos que desenvolvem técnica e motivação."],
+  ["🎯", "Quem busca engajamento", "Atletas presentes e envolvidos do início ao fim."],
+  ["📋", "Quem quer organização", "Planeje melhor sem perder horas montando exercícios."],
+];
+
+const modules = [
+  ["01", "+250 Dinâmicas", "Atividades prontas para diferentes objetivos, organizadas de forma prática e fácil de aplicar."],
+  ["02", "Biblioteca por Objetivo", "Escolha a habilidade que deseja desenvolver e monte treinos completos em poucos minutos."],
+  ["03", "Desafios Semanais", "Desafios práticos para aumentar o engajamento e acompanhar a evolução técnica dos atletas."],
+];
+
+const bonuses = [
+  ["Aquecimentos Prontos", "Exercícios rápidos para começar com organização, intensidade e preparação física."],
+  ["Certificados de Craque", "Modelos para reconhecer a dedicação, evolução e participação dos atletas."],
+  ["Organização de Treinos", "Estruture sessões eficientes e mantenha a equipe motivada do início ao fim."],
+  ["Agilidade e Velocidade", "Desenvolva explosão, coordenação e mudança de direção com exercícios completos."],
+];
+
+const completeItems = [
+  "+250 Dinâmicas de Futebol", "Área VIP completa", "Biblioteca de Treinos por Objetivo",
+  "Desafios Semanais", "Aquecimentos Prontos", "Certificados de Craque",
+  "Organização de Treinos", "Exercícios de Agilidade e Velocidade", "Todos os bônus inclusos",
+];
+
+const faqs = [
+  ["Como recebo o material?", "Você receberá acesso imediatamente após a confirmação da compra."],
+  ["As dinâmicas servem para qualquer idade?", "Sim. O material pode ser adaptado para diferentes faixas etárias e níveis."],
+  ["Posso aplicar mesmo sendo iniciante?", "Sim. As atividades foram organizadas para facilitar a aplicação."],
+  ["O Plano Completo vale mais a pena?", "Sim. Ele reúne toda a Área VIP, bônus exclusivos e ferramentas para organizar seus treinos."],
+  ["O material é digital?", "Sim. O acesso é totalmente online."],
+  ["As atividades já estão organizadas?", "Sim. Todo o conteúdo foi separado para facilitar o planejamento dos treinos."],
+];
+
+export default function Home() {
+  const [modal, setModal] = useState(false);
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setModal(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  return (
+    <main>
+      <section className="hero" id="inicio">
+        <div className="pitch-lines" />
+        <nav className="nav wrap" aria-label="Navegação principal">
+          <a className="brand" href="#inicio"><span>⚽</span> TREINO<span>PRO</span></a>
+          <a className="nav-cta" href="#oferta">Ver oferta</a>
+        </nav>
+        <div className="hero-grid wrap">
+          <div className="hero-copy">
+            <div className="eyebrow"><i /> Método prático para treinos melhores</div>
+            <h1><span>+250</span> Dinâmicas de Futebol Prontas</h1>
+            <p>Tenha atividades organizadas para tornar seus treinos mais divertidos, eficientes e profissionais. Economize tempo no planejamento e mantenha seus atletas sempre motivados.</p>
+            <a className="button primary" href="#oferta">Quero melhorar meus treinos agora <b>→</b></a>
+            <div className="hero-trust"><span>✓ Acesso imediato</span><span>✓ 100% digital</span><span>✓ Compra segura</span></div>
+          </div>
+          <div className="hero-visual">
+            <div className="image-shell"><img src="/images/football-training-kit.png" alt="Mockup do material com dinâmicas e planos de treino de futebol" /></div>
+            <div className="floating-stat"><strong>250+</strong><span>atividades prontas</span></div>
+          </div>
+        </div>
+        <div className="hero-bar"><div className="wrap"><span>⚡ Menos tempo planejando</span><span>⚽ Mais variedade no campo</span><span>🏆 Atletas mais motivados</span></div></div>
+      </section>
+
+      <section className="section light" id="para-quem">
+        <div className="wrap">
+          <div className="section-head"><span className="kicker">FEITO PARA QUEM VIVE O FUTEBOL</span><h2>Para quem é esse material?</h2><p>Para profissionais que querem sair do improviso e entregar treinos que os atletas esperam a semana inteira.</p></div>
+          <div className="audience-grid">{audiences.map(([icon,title,text]) => <article className="audience-card" key={title}><span className="icon-box">{icon}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+        </div>
+      </section>
+
+      <section className="section dark" id="conteudo">
+        <div className="wrap">
+          <div className="section-head left"><span className="kicker gold">CONTEÚDO COMPLETO, APLICAÇÃO SIMPLES</span><h2>O que você vai receber</h2><p>Uma central de ideias para planejar, aplicar e evoluir cada sessão.</p></div>
+          <div className="module-layout">
+            <div className="module-list">{modules.map(([n,title,text]) => <article className="module-card" key={n}><span>{n}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+            <div className="vip-panel"><small>ACESSO EXCLUSIVO</small><h3>Área VIP</h3><p>Todo o seu repertório organizado em um só lugar, disponível sempre que o próximo treino pedir uma ideia nova.</p><div className="mini-ui"><div className="mini-top"><b>Seu próximo treino</b><em>12 atividades</em></div><div className="field"><i /><i /><i /><i /><span /></div><div className="progress"><span /></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section showcase">
+        <div className="wrap">
+          <div className="section-head"><span className="kicker">VEJA POR DENTRO</span><h2>Tudo organizado. Tudo pronto.</h2><p>Conteúdo visual e direto para você consultar no celular, tablet ou computador.</p></div>
+          <div className="showcase-image"><img src="/images/football-training-kit.png" alt="Material digital exibido em tablet, celular e livro de treino" /></div>
+          <div className="feature-pills">{["Dinâmicas", "Área VIP", "Biblioteca de Treinos", "Desafios Semanais", "Exercícios", "Organização dos treinos"].map(x => <span key={x}>✓ {x}</span>)}</div>
+        </div>
+      </section>
+
+      <section className="section bonuses" id="bonus">
+        <div className="wrap">
+          <div className="section-head"><span className="kicker gold">MAIS VALOR PARA O SEU TREINO</span><h2>Bônus Especiais Inclusos</h2><p>Quatro materiais extras para deixar sua preparação ainda mais completa.</p></div>
+          <div className="bonus-grid">{bonuses.map(([title,text], i) => <article className="bonus-card" key={title}><div className="bonus-number">BÔNUS {i + 1}</div><span className="gift">🎁</span><h3>{title}</h3><p>{text}</p><div className="bonus-price"><span>De <s>R$17,00</s></span><strong>GRÁTIS</strong></div></article>)}</div>
+        </div>
+      </section>
+
+      <section className="section pricing" id="oferta">
+        <div className="wrap">
+          <div className="section-head"><span className="kicker">ESCOLHA SEU ACESSO</span><h2>Comece a transformar seus treinos</h2><p>Pagamento único. Acesso imediato ao material digital.</p></div>
+          <div className="plans">
+            <article className="plan basic"><div className="plan-top"><span>Plano Básico</span><p>O essencial para renovar suas atividades.</p></div><div className="price"><small>Pagamento único</small><strong><sup>R$</sup>10<span>,00</span></strong></div><ul>{["+250 Dinâmicas de Futebol", "Organização das atividades", "Material digital", "Acesso imediato"].map(x=><li key={x}>✓ <span>{x}</span></li>)}</ul><button className="button outline" onClick={() => setModal(true)}>Quero o Plano Básico</button></article>
+            <article className="plan complete"><div className="popular">★ MAIS VENDIDO</div><div className="plan-top"><span>Plano Completo</span><p>A experiência completa para o seu melhor treino.</p></div><div className="price"><small>De <s>R$27,00</s> por apenas</small><strong><sup>R$</sup>17<span>,90</span></strong></div><ul>{completeItems.map(x=><li key={x}>✓ <span>{x}</span></li>)}</ul><a className="button primary" href="#">Quero o Plano Completo <b>→</b></a><small className="secure">🔒 Compra 100% segura</small></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section guarantee"><div className="wrap guarantee-grid"><div className="seal"><div><span>✓</span><b>COMPRA<br/>SEGURA</b><small>ACESSO IMEDIATO</small></div></div><div><span className="kicker gold">RISCO ZERO</span><h2>Garantia de satisfação</h2><p>Você pode acessar o material com tranquilidade. Caso perceba que ele não atende às suas expectativas, poderá solicitar suporte dentro do prazo informado na compra.</p><div className="guarantee-tags"><span>🛡️ Garantia de Satisfação</span><span>⚡ Acesso Imediato</span></div></div></div></section>
+
+      <section className="section faq"><div className="wrap narrow"><div className="section-head"><span className="kicker">DÚVIDAS FREQUENTES</span><h2>Antes de entrar em campo</h2></div><div className="accordion">{faqs.map(([q,a],i)=><details key={q} open={i===0}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></div></section>
+
+      <footer><div className="pitch-lines"/><div className="wrap footer-content"><span className="footer-ball">⚽</span><h2>Comece hoje a transformar seus treinos</h2><p>Pare de repetir sempre os mesmos exercícios. Tenha +250 dinâmicas organizadas, bônus exclusivos e uma Área VIP completa para planejar treinos mais divertidos e eficientes.</p><a className="button primary" href="#oferta">Quero minhas dinâmicas agora <b>→</b></a><div className="footer-bottom"><span>© 2026 TreinoPro</span><span>Material digital • Acesso imediato</span></div></div></footer>
+
+      {modal && <div className="modal-backdrop" role="presentation" onMouseDown={() => setModal(false)}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="modal-close" aria-label="Fechar" onClick={()=>setModal(false)}>×</button><span className="modal-alert">ESPERE!</span><h2 id="modal-title">Leve o Plano Completo por apenas <em>R$17,90</em></h2><p>Além das +250 Dinâmicas de Futebol você recebe:</p><div className="modal-items">{completeItems.slice(1,8).map(x=><span key={x}>✓ {x}</span>)}</div><a className="button primary" href="#">Sim, quero o Plano Completo por R$17,90</a><a className="modal-no" href="#">Não, continuar com o Plano Básico</a></div></div>}
+    </main>
+  );
+}
