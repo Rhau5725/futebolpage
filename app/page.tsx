@@ -20,6 +20,7 @@ const completeItems = [
   "+250 Dinâmicas de Futebol",
   "Biblioteca de Treinos por Objetivo",
   "Desafios Semanais",
+  "Acesso vitalício",
   "Todos os bônus inclusos",
 ];
 
