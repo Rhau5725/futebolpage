@@ -55,7 +55,6 @@ export default function Home() {
           </div>
           <div className="hero-visual">
             <div className="image-shell"><img src="/images/football-training-kit.png" alt="Mockup do material com dinâmicas e planos de treino de futebol" /></div>
-            <div className="floating-stat"><strong>250+</strong><span>atividades prontas</span></div>
           </div>
         </div>
       </section>
