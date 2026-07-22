@@ -50,11 +50,11 @@ export default function Home() {
           <div className="hero-copy">
             <h1><span>+250</span> Dinâmicas de Futebol Prontas</h1>
             <p>Tenha atividades organizadas para tornar seus treinos mais divertidos, eficientes e profissionais. Economize tempo no planejamento e mantenha seus atletas sempre motivados.</p>
+            <div className="hero-visual">
+              <div className="image-shell"><img src="/images/football-training-kit.png" alt="Mockup do material com dinâmicas e planos de treino de futebol" /></div>
+            </div>
             <a className="button primary" href="#oferta">Quero melhorar meus treinos agora <b>→</b></a>
             <div className="hero-trust"><span>✓ Acesso imediato</span><span>✓ 100% digital</span><span>✓ Compra segura</span></div>
-          </div>
-          <div className="hero-visual">
-            <div className="image-shell"><img src="/images/football-training-kit.png" alt="Mockup do material com dinâmicas e planos de treino de futebol" /></div>
           </div>
         </div>
       </section>
@@ -70,7 +70,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head"><span className="kicker">VEJA POR DENTRO</span><h2>Tudo organizado. Tudo pronto.</h2><p>Conteúdo visual e direto para você consultar no celular, tablet ou computador.</p></div>
           <div className="showcase-image"><img src="/images/football-training-kit.png" alt="Material digital exibido em tablet, celular e livro de treino" /></div>
-          <div className="feature-pills">{["Dinâmicas", "Área VIP", "Biblioteca de Treinos", "Desafios Semanais", "Exercícios", "Organização dos treinos"].map(x => <span key={x}>✓ {x}</span>)}</div>
+          <div className="feature-pills">{["+250 Dinâmicas", "Área VIP", "Treinos por Objetivo"].map(x => <span key={x}>✓ {x}</span>)}</div>
         </div>
       </section>
 
@@ -97,7 +97,7 @@ export default function Home() {
 
       <footer><div className="pitch-lines"/><div className="wrap footer-content"><span className="footer-ball">⚽</span><h2>Comece hoje a transformar seus treinos</h2><p>Pare de repetir sempre os mesmos exercícios. Tenha +250 dinâmicas organizadas, bônus exclusivos e uma Área VIP completa para planejar treinos mais divertidos e eficientes.</p><a className="button primary" href="#oferta">Quero minhas dinâmicas agora <b>→</b></a><div className="footer-bottom"><span>© 2026 TreinoPro</span><span>Material digital • Acesso imediato</span></div></div></footer>
 
-      {modal && <div className="modal-backdrop" role="presentation" onMouseDown={() => setModal(false)}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="modal-close" aria-label="Fechar" onClick={()=>setModal(false)}>×</button><span className="modal-alert">ESPERE!</span><h2 id="modal-title">Leve o Plano Completo por apenas <em>R$17,90</em></h2><p>Além das +250 Dinâmicas de Futebol você recebe:</p><div className="modal-items">{completeItems.slice(1,8).map(x=><span key={x}>✓ {x}</span>)}</div><a className="button primary" href="#">Sim, quero o Plano Completo por R$17,90</a><a className="modal-no" href="#">Não, continuar com o Plano Básico</a></div></div>}
+      {modal && <div className="modal-backdrop" role="presentation" onMouseDown={() => setModal(false)}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="modal-close" aria-label="Fechar" onClick={()=>setModal(false)}>×</button><h2 id="modal-title">Libere o Plano Completo<br/>por apenas R$ 17,90</h2><p><strong>Por mais R$ 7,90</strong>, você recebe tudo o que está na oferta completa.</p><div className="modal-product"><img src="/images/football-training-kit.png" alt="Plano Completo TreinoPro" /></div><div className="modal-items">{completeItems.slice(0,7).map(x=><span key={x}>✓ {x}</span>)}</div><div className="modal-price">R$ 17,90</div><small className="modal-upgrade">Upgrade único antes de finalizar seu acesso.</small><a className="button primary" href="#">SIM! QUERO LIBERAR TUDO POR R$ 17,90 →</a><a className="modal-no" href="#">Não, obrigado. Quero apenas o Plano Básico por R$ 10,00</a></div></div>}
     </main>
   );
 }

@@ -38,3 +38,46 @@
 .hero-grid{min-height:calc(100svh - 84px);padding-bottom:48px}
 .hero h1 span{font-size:1.12em;line-height:.9;text-shadow:0 0 36px #13d66f55}
 @media(max-width:600px){.hero-grid{min-height:auto;padding-top:28px;padding-bottom:48px}.hero h1 span{font-size:1.28em;margin-bottom:8px}}
+
+/* Latest layout refinements */
+.hero-grid{grid-template-columns:1fr;max-width:880px;text-align:center;gap:0;padding-top:42px}
+.hero-copy>p{margin-left:auto;margin-right:auto}
+.hero-copy .hero-visual{max-width:720px;margin:26px auto 24px}
+.hero-copy .button{margin-left:auto;margin-right:auto}
+.hero-trust{justify-content:center}
+.feature-pills{max-width:660px;margin-left:auto;margin-right:auto}
+.bonuses{padding:58px 0}
+.bonuses .section-head{margin-bottom:24px}
+.bonus-grid{max-width:900px;gap:12px}
+.bonus-image{aspect-ratio:16/7.3}
+.bonus-image img{object-position:center}
+.bonus-body{padding:14px 17px 16px}
+.bonus-body .bonus-number{margin-bottom:8px}
+.bonus-body h3{margin-bottom:6px}
+.bonus-body p{font-size:12px;min-height:34px;margin:0 0 8px}
+.bonus-price{padding-top:10px}
+.pricing{background:linear-gradient(135deg,#07170e,#0b2a18);color:#fff}
+.pricing .section-head p{color:#c7d4cb}
+.plans{align-items:stretch;max-width:1080px}
+.plan.basic{color:var(--ink);border-radius:10px}
+.plan.complete{transform:scale(1.035);border-color:#5fc315;box-shadow:0 28px 90px #0008,0 0 0 1px #5fc315}
+.plan.complete .popular{background:#ff6816;color:#fff;right:auto;left:50%;transform:translateX(-50%);white-space:nowrap}
+.complete .price{text-align:center}
+.complete .price strong{font-size:72px;color:#fff;text-shadow:0 3px 0 #174b27}
+.complete .button{background:linear-gradient(135deg,#53bd12,#238014);color:#fff}
+.modal{background:#fffaf0;color:#111;border-radius:0;padding:28px 28px 24px;max-width:470px}
+.modal-close{right:12px;top:12px;border:1px solid #ccdfcb;background:#fff;color:#147733}
+.modal h2{font-family:var(--font-display);font-size:38px;line-height:.94;margin:4px 18px 12px;text-transform:none}
+.modal h2 em{color:inherit}
+.modal>p{font-size:13px;font-weight:700;margin:0 auto 14px;max-width:390px}
+.modal-product{width:210px;height:130px;margin:4px auto 12px;overflow:hidden}
+.modal-product img{width:100%;height:100%;object-fit:contain}
+.modal-items{grid-template-columns:1fr;background:transparent;padding:0;margin:8px 0 14px;gap:7px;font-weight:800}
+.modal-items span{font-size:13px;color:#161d17;text-align:left}
+.modal-items span::first-letter{color:#35ae24}
+.modal-price{font-family:var(--font-display);font-size:50px;line-height:1;color:#178340;margin:8px 0}
+.modal-upgrade{display:block;color:#69726d;font-weight:700;margin-bottom:16px}
+.modal .button{min-height:54px;border-radius:10px;background:#1b7c28;color:#fff;font-size:12px;box-shadow:0 7px 0 #092d19}
+.modal-no{font-size:10px;color:#626b66;font-weight:700}
+@media(max-width:900px){.plan.complete{transform:none}}
+@media(max-width:600px){.hero-grid{padding-top:24px}.hero-copy .hero-visual{margin:22px auto 20px}.bonuses{padding:48px 0}.bonus-image{aspect-ratio:16/7.6}.modal{padding:28px 20px 22px}.modal h2{font-size:33px}.modal-product{width:180px;height:110px}.modal-price{font-size:48px}}
