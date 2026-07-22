@@ -17,8 +17,12 @@ const bonuses = [
 ];
 
 const completeItems = [
-  "+250 Dinâmicas de Futebol", "Biblioteca de Treinos por Objetivo",
-  "Desafios Semanais", "Todos os bônus inclusos",
+  "+250 Dinâmicas de Futebol", "Todos os bônus inclusos",
+];
+
+const highlightedCompleteItems = [
+  "Biblioteca de Treinos por Objetivo",
+  "Desafios Semanais",
 ];
 
 const faqs = [
@@ -82,7 +86,7 @@ export default function Home() {
           <div className="section-head"><span className="kicker">ESCOLHA SEU ACESSO</span><h2>Comece a transformar seus treinos</h2><p>Pagamento único. Acesso imediato ao material digital.</p></div>
           <div className="plans">
             <article className="plan basic"><div className="plan-top"><span>Plano Básico</span><p>O essencial para renovar suas atividades.</p></div><div className="price"><small>Pagamento único</small><strong><sup>R$</sup>10<span>,00</span></strong></div><ul>{["+250 Dinâmicas de Futebol", "Organização das atividades", "Material digital", "Acesso imediato"].map(x=><li key={x}>✓ <span>{x}</span></li>)}</ul><button className="button outline" onClick={() => setModal(true)}>Quero o Plano Básico</button></article>
-            <article className="plan complete"><div className="popular">★ MAIS VENDIDO</div><div className="plan-top"><span>Plano Completo</span><p>A experiência completa para o seu melhor treino.</p></div><div className="price"><small>De <s>R$87,00</s> por apenas</small><strong><sup>R$</sup>27<span>,00</span></strong></div><ul>{completeItems.map(x=><li key={x}>✓ <span>{x}</span></li>)}</ul><a className="button primary" href="#">Quero o Plano Completo <b>→</b></a><small className="secure">🔒 Compra 100% segura</small></article>
+            <article className="plan complete"><div className="popular">★ MAIS VENDIDO</div><div className="plan-top"><span>Plano Completo</span><p>A experiência completa para o seu melhor treino.</p></div><div className="price"><small>De <s>R$87,00</s> por apenas</small><strong><sup>R$</sup>27<span>,00</span></strong></div><div className="complete-highlights">{highlightedCompleteItems.map(x=><div key={x}><b>✓</b><span>{x}</span></div>)}</div><ul>{completeItems.map(x=><li key={x}>✓ <span>{x}</span></li>)}</ul><a className="button primary" href="#">Quero o Plano Completo <b>→</b></a><small className="secure">🔒 Compra 100% segura</small></article>
           </div>
         </div>
       </section>
@@ -93,7 +97,7 @@ export default function Home() {
 
       <footer><div className="pitch-lines"/><div className="wrap footer-content"><span className="footer-ball">⚽</span><h2>Comece hoje a transformar seus treinos</h2><p>Pare de repetir sempre os mesmos exercícios. Tenha +250 dinâmicas organizadas, bônus exclusivos e uma Área VIP completa para planejar treinos mais divertidos e eficientes.</p><a className="button primary" href="#oferta">Quero minhas dinâmicas agora <b>→</b></a><div className="footer-bottom"><span>© 2026 TreinoPro</span><span>Material digital • Acesso imediato</span></div></div></footer>
 
-      {modal && <div className="modal-backdrop" role="presentation" onMouseDown={() => setModal(false)}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="modal-close" aria-label="Fechar" onClick={()=>setModal(false)}>×</button><h2 id="modal-title">Libere o Plano Completo<br/>por apenas R$ 17,00</h2><p><strong>Por mais R$ 7,00</strong>, você recebe tudo o que está na oferta completa.</p><div className="modal-product"><img src="/images/hero-complete-material.png" alt="Plano Completo TreinoPro" /></div><div className="modal-items">{completeItems.map(x=><span key={x}>✓ {x}</span>)}</div><div className="modal-price">R$ 17,00</div><small className="modal-upgrade">Upgrade único antes de finalizar seu acesso.</small><a className="button primary" href="#">SIM! QUERO LIBERAR TUDO POR R$ 17,00 →</a><a className="modal-no" href="#">Não, obrigado. Quero apenas o Plano Básico por R$ 10,00</a></div></div>}
+      {modal && <div className="modal-backdrop" role="presentation" onMouseDown={() => setModal(false)}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="modal-close" aria-label="Fechar" onClick={()=>setModal(false)}>×</button><h2 id="modal-title">Libere o Plano Completo<br/>por apenas R$ 17,00</h2><p><strong>Por mais R$ 7,00</strong>, você recebe tudo o que está na oferta completa.</p><div className="modal-product"><img src="/images/hero-complete-material.png" alt="Plano Completo TreinoPro" /></div><div className="modal-items modal-featured">{highlightedCompleteItems.map(x=><span key={x}>✓ {x}</span>)}</div><div className="modal-items">{completeItems.map(x=><span key={x}>✓ {x}</span>)}</div><div className="modal-price">R$ 17,00</div><small className="modal-upgrade">Upgrade único antes de finalizar seu acesso.</small><a className="button primary" href="#">SIM! QUERO LIBERAR TUDO POR R$ 17,00 →</a><a className="modal-no" href="#">Não, obrigado. Quero apenas o Plano Básico por R$ 10,00</a></div></div>}
     </main>
   );
 }
