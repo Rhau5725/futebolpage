@@ -132,6 +132,10 @@ footer .button{margin:18px auto 24px;min-height:48px}
 .feature-pills span{font-weight:850}
 @media(max-width:600px){.feature-pills{justify-content:center}.feature-pills span{font-size:12px}}
 
-.guarantee-image{width:min(330px,100%);margin:auto}
+.guarantee{padding:42px 0}
+.guarantee-grid{grid-template-columns:.8fr 1.2fr;gap:32px}
+.guarantee-image{width:min(430px,100%);margin:auto}
 .guarantee-image img{display:block;width:100%;height:auto;object-fit:contain}
-@media(max-width:600px){.guarantee-image{width:260px}}
+.guarantee h2{margin:8px 0 10px}
+.guarantee p{margin:0;font-size:15px;line-height:1.5}
+@media(max-width:600px){.guarantee{padding:30px 0}.guarantee-grid{gap:18px}.guarantee-image{width:320px}.guarantee h2{font-size:32px;margin:5px 0 8px}.guarantee p{font-size:13px}}
