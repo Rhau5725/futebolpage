@@ -184,3 +184,9 @@ footer .button{margin:18px auto 24px;min-height:48px}
 .plan.complete .price sup{position:static;display:inline-block;vertical-align:baseline;margin-right:7px}
 @media(max-width:600px){.plan.complete .price{gap:12px;margin:25px 0 22px}.plan.complete .price small{font-size:12px}.plan.complete .price strong{font-size:64px}.plan.complete .price sup{font-size:19px}}
 .modal button.modal-no{width:100%;border:0;background:transparent;cursor:pointer;font-family:inherit}
+@media(max-width:600px){
+  .image-shell,.showcase-image,.receive-stage,.plan,.plan.complete{box-shadow:none}
+  .modal-backdrop{backdrop-filter:none;background:#020b07ee}
+  .button:hover,.audience-card:hover{transform:none}
+  .pitch-lines{opacity:.07}
+}
