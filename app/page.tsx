@@ -33,6 +33,9 @@ const receivedSlides = [
   ["/images/receive-certificates.webp", "Bônus de certificados de craque"],
   ["/images/receive-vip-library.webp", "Biblioteca exclusiva com 60 treinos VIP"],
   ["/images/receive-weekly-challenges.webp", "Desafios semanais para os atletas"],
+  ["/images/receive-training-library.webp", "Biblioteca visual de dinâmicas organizadas por objetivo"],
+  ["/images/receive-bonus-tools.webp", "Ferramentas dos bônus de organização, agilidade e velocidade"],
+  ["/images/receive-finishing-library.webp", "Dinâmicas de finalização disponíveis na biblioteca"],
 ];
 
 const faqs = [
