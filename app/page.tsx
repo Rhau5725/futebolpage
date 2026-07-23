@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section guarantee"><div className="wrap guarantee-grid"><div className="seal"><div><span>✓</span><b>COMPRA<br/>SEGURA</b><small>ACESSO IMEDIATO</small></div></div><div><span className="kicker gold">RISCO ZERO</span><h2>Garantia de satisfação</h2><p>Você pode acessar o material com tranquilidade. Caso perceba que ele não atende às suas expectativas, poderá solicitar suporte dentro do prazo informado na compra.</p><div className="guarantee-tags"><span>🛡️ Garantia de Satisfação</span><span>⚡ Acesso Imediato</span></div></div></div></section>
+      <section className="section guarantee"><div className="wrap guarantee-grid"><div className="guarantee-image"><img src="/images/guarantee-7-days.png" alt="Satisfação garantida por 7 dias" /></div><div><span className="kicker gold">RISCO ZERO</span><h2>Garantia de satisfação</h2><p>Você tem 7 dias para conhecer o material com tranquilidade e solicitar suporte caso não fique satisfeito.</p></div></div></section>
 
       <section className="section faq"><div className="wrap narrow"><div className="section-head"><span className="kicker">DÚVIDAS FREQUENTES</span><h2>Antes de entrar em campo</h2></div><div className="accordion">{faqs.map(([q,a],i)=><details key={q} open={i===0}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></div></section>
 
