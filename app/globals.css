@@ -127,3 +127,7 @@ footer p{font-size:13px;line-height:1.45;max-width:650px;margin:0 auto}
 footer .button{margin:18px auto 24px;min-height:48px}
 .footer-bottom{padding-top:14px}
 @media(max-width:600px){.plan-product-image{width:calc(100% + 26px);margin:14px -13px 8px}.modal-product{width:320px;height:205px;max-width:100%}footer{padding:26px 0 13px}.footer-ball{font-size:20px}footer h2{font-size:27px}footer p{font-size:12px}footer .button{margin:15px auto 20px}.footer-bottom{padding-top:11px}}
+
+.feature-pills{justify-content:center;text-align:center}
+.feature-pills span{font-weight:850}
+@media(max-width:600px){.feature-pills{justify-content:center}.feature-pills span{font-size:12px}}

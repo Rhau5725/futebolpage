@@ -60,18 +60,18 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section showcase">
+        <div className="wrap">
+          <div className="section-head"><span className="kicker">VEJA POR DENTRO</span><h2>Tudo organizado. Tudo pronto.</h2><p>Conteúdo visual e direto para você consultar no celular, tablet ou computador.</p></div>
+          <div className="showcase-image"><img src="/images/kids-football-training.png" alt="Crianças participando de um treino organizado de futebol" /></div>
+          <div className="feature-pills">{["+250 Dinâmicas", "Área VIP", "Treinos por Objetivo"].map(x => <span key={x}>✓ {x}</span>)}</div>
+        </div>
+      </section>
+
       <section className="section light" id="para-quem">
         <div className="wrap">
           <div className="section-head audience-head"><h2>Para quem é esse material?</h2></div>
           <div className="audience-grid">{audiences.map(([title,text]) => <article className="audience-card" key={title}><span className="icon-box">✓</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
-        </div>
-      </section>
-
-      <section className="section showcase">
-        <div className="wrap">
-          <div className="section-head"><span className="kicker">VEJA POR DENTRO</span><h2>Tudo organizado. Tudo pronto.</h2><p>Conteúdo visual e direto para você consultar no celular, tablet ou computador.</p></div>
-          <div className="showcase-image"><img src="/images/football-training-kit.png" alt="Material digital exibido em tablet, celular e livro de treino" /></div>
-          <div className="feature-pills">{["+250 Dinâmicas", "Área VIP", "Treinos por Objetivo"].map(x => <span key={x}>✓ {x}</span>)}</div>
         </div>
       </section>
 
