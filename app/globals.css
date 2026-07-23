@@ -176,3 +176,10 @@ footer .button{margin:18px auto 24px;min-height:48px}
 .receive-dots button:focus-visible{outline:3px solid #f1bf3c;outline-offset:3px}
 @media(max-width:600px){.receive-section{padding:56px 0}.receive-section .section-head{margin-bottom:24px}.receive-stage{aspect-ratio:4/5;border-radius:16px}.receive-dots{margin-top:15px;gap:8px}}
 @media(prefers-reduced-motion:reduce){.receive-stage img{transition:none}}
+
+/* Keep the complete-plan price lines clearly separated on small screens. */
+.plan.complete .price{display:flex;flex-direction:column;align-items:center;gap:10px}
+.plan.complete .price small{display:block;margin:0;line-height:1.35}
+.plan.complete .price strong{display:flex;align-items:baseline;justify-content:center;line-height:.9}
+.plan.complete .price sup{position:static;display:inline-block;vertical-align:baseline;margin-right:7px}
+@media(max-width:600px){.plan.complete .price{gap:12px;margin:25px 0 22px}.plan.complete .price small{font-size:12px}.plan.complete .price strong{font-size:64px}.plan.complete .price sup{font-size:19px}}
