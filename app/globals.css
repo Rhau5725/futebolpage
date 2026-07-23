@@ -117,13 +117,13 @@
 .basic .price sup{position:static;display:inline-block;vertical-align:top}
 .plan li.excluded{color:#df2d20}
 .plan li.excluded span{color:#6f7772;font-weight:650}
-.plan-product-image{width:min(360px,100%);margin:18px auto 8px}
+.plan-product-image{width:min(470px,112%);margin:18px -6% 8px}
 .plan-product-image img{display:block;width:100%;height:auto;object-fit:contain}
-.modal-product{width:270px;height:175px}
+.modal-product{width:380px;height:245px;max-width:100%}
 footer{padding:34px 0 16px}
 .footer-ball{font-size:24px}
 footer h2{font-size:clamp(27px,3.5vw,40px);margin:10px 0}
 footer p{font-size:13px;line-height:1.45;max-width:650px;margin:0 auto}
 footer .button{margin:18px auto 24px;min-height:48px}
 .footer-bottom{padding-top:14px}
-@media(max-width:600px){.plan-product-image{width:280px;margin-top:14px}.modal-product{width:230px;height:145px}footer{padding:26px 0 13px}.footer-ball{font-size:20px}footer h2{font-size:27px}footer p{font-size:12px}footer .button{margin:15px auto 20px}.footer-bottom{padding-top:11px}}
+@media(max-width:600px){.plan-product-image{width:calc(100% + 26px);margin:14px -13px 8px}.modal-product{width:320px;height:205px;max-width:100%}footer{padding:26px 0 13px}.footer-ball{font-size:20px}footer h2{font-size:27px}footer p{font-size:12px}footer .button{margin:15px auto 20px}.footer-bottom{padding-top:11px}}
