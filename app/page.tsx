@@ -26,6 +26,14 @@ const completeItems = [
 
 const basicExcludedItems = completeItems.slice(1);
 
+const receivedSlides = [
+  ["/images/receive-dynamics.png", "Exemplo das mais de 250 dinâmicas de futebol"],
+  ["/images/receive-warmups.png", "Bônus de aquecimentos prontos"],
+  ["/images/receive-certificates.png", "Bônus de certificados de craque"],
+  ["/images/receive-vip-library.png", "Biblioteca exclusiva com 60 treinos VIP"],
+  ["/images/receive-weekly-challenges.png", "Desafios semanais para os atletas"],
+];
+
 const faqs = [
   ["Como recebo o material?", "Você receberá acesso imediatamente após a confirmação da compra."],
   ["As dinâmicas servem para qualquer idade?", "Sim. O material pode ser adaptado para diferentes faixas etárias e níveis."],
@@ -37,10 +45,18 @@ const faqs = [
 
 export default function Home() {
   const [modal, setModal] = useState(false);
+  const [receivedSlide, setReceivedSlide] = useState(0);
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => event.key === "Escape" && setModal(false);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+  }, []);
+  useEffect(() => {
+    const timer = window.setInterval(
+      () => setReceivedSlide(current => (current + 1) % receivedSlides.length),
+      7000,
+    );
+    return () => window.clearInterval(timer);
   }, []);
 
   return (
@@ -65,6 +81,41 @@ export default function Home() {
           <div className="section-head"><span className="kicker">VEJA POR DENTRO</span><h2>Tudo organizado. Tudo pronto.</h2><p>Conteúdo visual e direto para você consultar no celular, tablet ou computador.</p></div>
           <div className="showcase-image"><img src="/images/kids-football-training.png" alt="Crianças participando de um treino organizado de futebol" /></div>
           <div className="feature-pills">{["+250 Dinâmicas", "Área VIP", "Treinos por Objetivo"].map(x => <span key={x}>✓ {x}</span>)}</div>
+        </div>
+      </section>
+
+      <section className="section receive-section" aria-labelledby="receive-title">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="kicker">CONHEÇA O CONTEÚDO</span>
+            <h2 id="receive-title">O que você vai receber</h2>
+            <p>Veja por dentro tudo o que estará disponível para transformar seus treinos.</p>
+          </div>
+          <div className="receive-carousel" aria-roledescription="carrossel" aria-label="Conteúdos incluídos no material">
+            <div className="receive-stage" aria-live="polite">
+              {receivedSlides.map(([src, alt], index) => (
+                <img
+                  className={index === receivedSlide ? "active" : ""}
+                  src={src}
+                  alt={alt}
+                  key={src}
+                  aria-hidden={index !== receivedSlide}
+                />
+              ))}
+            </div>
+            <div className="receive-dots" aria-label="Selecionar imagem">
+              {receivedSlides.map(([, alt], index) => (
+                <button
+                  className={index === receivedSlide ? "active" : ""}
+                  type="button"
+                  key={alt}
+                  onClick={() => setReceivedSlide(index)}
+                  aria-label={`Ver imagem ${index + 1}: ${alt}`}
+                  aria-current={index === receivedSlide ? "true" : undefined}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
