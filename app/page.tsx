@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const audiences = [
   ["Professores e treinadores", "Para quem quer renovar as aulas, organizar melhor cada sessão e aplicar atividades com segurança."],
@@ -46,9 +46,23 @@ const faqs = [
 
 export default function Home() {
   const [modal, setModal] = useState(false);
+  const [basicOfferConfirmed, setBasicOfferConfirmed] = useState(false);
   const [receivedSlide, setReceivedSlide] = useState(0);
+  const modalScrollPosition = useRef(0);
+
+  const openBasicOffer = () => {
+    modalScrollPosition.current = window.scrollY;
+    setModal(true);
+  };
+
+  const closeBasicOffer = () => {
+    setModal(false);
+    setBasicOfferConfirmed(true);
+    window.requestAnimationFrame(() => window.scrollTo({ top: modalScrollPosition.current, behavior: "instant" }));
+  };
+
   useEffect(() => {
-    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setModal(false);
+    const onKey = (event: KeyboardEvent) => event.key === "Escape" && closeBasicOffer();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
@@ -138,7 +152,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head"><span className="kicker">ESCOLHA SEU ACESSO</span><h2>Comece a transformar seus treinos</h2><p>Pagamento único. Acesso imediato ao material digital.</p></div>
           <div className="plans">
-            <article className="plan basic"><div className="plan-top"><span>Plano Básico</span><p>O essencial para renovar suas atividades.</p></div><div className="price"><small>Pagamento único</small><strong><sup>R$</sup>10<span>,00</span></strong></div><ul><li>✓ <span>+250 Dinâmicas de Futebol</span></li>{basicExcludedItems.map(x=><li className="excluded" key={x}>× <span>{x}</span></li>)}</ul><button className="button outline" onClick={() => setModal(true)}>Quero o Plano Básico</button></article>
+            <article className="plan basic"><div className="plan-top"><span>Plano Básico</span><p>O essencial para renovar suas atividades.</p></div><div className="price"><small>Pagamento único</small><strong><sup>R$</sup>10<span>,00</span></strong></div><ul><li>✓ <span>+250 Dinâmicas de Futebol</span></li>{basicExcludedItems.map(x=><li className="excluded" key={x}>× <span>{x}</span></li>)}</ul>{basicOfferConfirmed ? <a className="button outline" href="https://go.perfectpay.com.br/PPU38CQEILQ">Quero o Plano Básico</a> : <button className="button outline" onClick={openBasicOffer}>Quero o Plano Básico</button>}</article>
             <article className="plan complete"><div className="popular">★ MAIS VENDIDO</div><div className="plan-top"><span>Plano Completo</span><p>A experiência completa para o seu melhor treino.</p></div><div className="plan-product-image"><img src="/images/vip-complete-mockup.png" alt="Mockup do conteúdo completo com mais de 250 dinâmicas e Área VIP" /></div><div className="price"><small>De <s>R$87,00</s> por apenas</small><strong><sup>R$</sup>27<span>,00</span></strong></div><ul>{completeItems.map(x=><li key={x}>✓ <span>{x}</span></li>)}</ul><div className="plan-trust-banner"><img src="/images/secure-email-banner.png" alt="Compra segura, satisfação garantida, dados protegidos e acesso por e-mail" /></div><a className="button primary" href="https://go.perfectpay.com.br/PPU38CQEILN">Quero o Plano Completo <b>→</b></a><small className="secure">🔒 Compra 100% segura</small></article>
           </div>
         </div>
@@ -150,7 +164,7 @@ export default function Home() {
 
       <footer><div className="pitch-lines"/><div className="wrap footer-content"><span className="footer-ball">⚽</span><h2>Comece hoje a transformar seus treinos</h2><p>Pare de repetir sempre os mesmos exercícios. Tenha +250 dinâmicas organizadas, bônus exclusivos e uma Área VIP completa para planejar treinos mais divertidos e eficientes.</p><a className="button primary" href="#oferta">Quero minhas dinâmicas agora <b>→</b></a><div className="footer-bottom"><span>© 2026 TreinoPro</span><span>Material digital • Acesso imediato</span></div></div></footer>
 
-      {modal && <div className="modal-backdrop" role="presentation" onMouseDown={() => setModal(false)}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="modal-close" aria-label="Fechar" onClick={()=>setModal(false)}>×</button><h2 id="modal-title">Libere o Plano Completo<br/>por apenas R$ 17,00</h2><p><strong>Por mais R$ 7,00</strong>, você recebe tudo o que está na oferta completa.</p><div className="modal-product"><img src="/images/vip-complete-mockup.png" alt="Plano Completo TreinoPro" /></div><div className="modal-items">{completeItems.map(x=><span key={x}>✓ {x}</span>)}</div><div className="modal-price">R$ 17,00</div><small className="modal-upgrade">Upgrade único antes de finalizar seu acesso.</small><a className="button primary" href="https://go.perfectpay.com.br/PPU38CQEILO">SIM! QUERO LIBERAR TUDO POR R$ 17,00 →</a><a className="modal-no" href="#">Não, obrigado. Quero apenas o Plano Básico por R$ 10,00</a></div></div>}
+      {modal && <div className="modal-backdrop" role="presentation" onMouseDown={closeBasicOffer}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="modal-close" aria-label="Fechar" onClick={closeBasicOffer}>×</button><h2 id="modal-title">Libere o Plano Completo<br/>por apenas R$ 17,00</h2><p><strong>Por mais R$ 7,00</strong>, você recebe tudo o que está na oferta completa.</p><div className="modal-product"><img src="/images/vip-complete-mockup.png" alt="Plano Completo TreinoPro" /></div><div className="modal-items">{completeItems.map(x=><span key={x}>✓ {x}</span>)}</div><div className="modal-price">R$ 17,00</div><small className="modal-upgrade">Upgrade único antes de finalizar seu acesso.</small><a className="button primary" href="https://go.perfectpay.com.br/PPU38CQEILO">SIM! QUERO LIBERAR TUDO POR R$ 17,00 →</a><button className="modal-no" type="button" onClick={closeBasicOffer}>Não, obrigado. Quero apenas o Plano Básico por R$ 10,00</button></div></div>}
     </main>
   );
 }
