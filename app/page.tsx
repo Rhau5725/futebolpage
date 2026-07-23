@@ -54,7 +54,7 @@ export default function Home() {
   useEffect(() => {
     const timer = window.setInterval(
       () => setReceivedSlide(current => (current + 1) % receivedSlides.length),
-      4000,
+      3000,
     );
     return () => window.clearInterval(timer);
   }, []);
